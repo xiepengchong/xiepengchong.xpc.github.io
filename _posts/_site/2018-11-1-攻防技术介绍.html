@@ -1,0 +1,134 @@
+<p>从2016年开始接触热更新，截止到目前为止，已经在不同公司开发过多个热更新框架，之前看过Ali有一本详细介绍热更新技术的文档，写的挺详细的，但是对于入门级的开发者来说，理解起来还是有难度的，所以在此总结一下目前业内热更新框架，由于热更新内容较多，所以分批更新。</p>
+
+<h2 id="业内主流热更新框架">业内主流热更新框架</h2>
+
+<p>热更新技术主要分为两派，一种是采用native hook方式，另一种通过classloader方式，两种方式我都尝试过，总结起来就是各有优缺点。
+<strong>native hook方式：</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.不需要重启
+2.可以以方法为颗粒度进行更新
+3.性能损耗小
+4.稳定性差，兼容性差 典型代表：Andfix，dexposed，Sophix，QFix
+</code></pre></div></div>
+
+<p><strong>classloader方式：</strong></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.需要进程重启才能生效
+2.一般是以class为颗粒度
+3.性能损耗大
+4.稳定性好，兼容性强 典型代表：Qzone hotfix，Sophix，Tinker，Amigo
+</code></pre></div></div>
+
+<p>除了主流技术以外，还有一些非主流技术：</p>
+
+<p>例如美团的Robust，我认为这个是一种原理最简单，坑最少的热更新方案，但同样有一些问题，就是需要在所有方法中都加入一段代码，我相信这个在很多公司应该是无法接受的。后面会详细介绍。</p>
+
+<p>以上的主流方案中，除了Qzone hotfix和Sophix以外，其他都是开源方案，
+Andfix属于半开源方案，因为热更新除了修复部分的技术，还有一部分是差分diff的逻辑，目前业界大部分文章强调的多是如何实现热更新，但打补丁包的过程也是一个技术难点。</p>
+
+<h2 id="native-hook方案介绍">Native hook方案介绍</h2>
+<p>最早出现的就是dexposed方案，这个方案自从android 6.0出来之后，就已经不再兼容了，我们在此只是介绍一下它的原理，我记得我刚开始去神州专车的时候，他们就在引入了这个热更新方案，当时不知道他们引入的成本有多高，但一次没有使用过。
+我去了之后，发现并不是没有使用场景，而是真的很难用，所以就直接废弃掉了，自己开发了一套热更新框架（当时还没有这么多开源方案）
+当时看他们使用dexposed使用，有几个问题：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.根本不了解dexposed的原理，所以不知道那些可以使用dexposed来修复
+2.dexposed采用类似代理方式，实现补丁包，反射写起来特别麻烦，尤其是对于混淆之后的代码
+3.dexposed只能兼容一部分低版本手机，所以用处根本不大。 下面我来说一下dexposed的技术与缺点：
+</code></pre></div></div>
+
+<p>在介绍dexposed之前，我先说一下java又一个动态代理proxy的类，否则可能觉得比较突兀。
+首先有一个类：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public interface IProxy {
+	public void proxy();
+}
+
+public class ProxyImpl implements IProxy {
+	private String TAG ="ProxyImpl";
+	@Override
+	public void proxy() {
+    	Log.v(TAG,"原始逻辑");
+	}
+}
+
+public class MainActivity extends AppCompatActivity {
+	private String TAG = "MainActivity";
+
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+    	super.onCreate(savedInstanceState);
+    	setContentView(R.layout.activity_main);
+   		InvocationHandler handler = new InvocationHandler(){
+        	@Override
+        	public Object invoke(Object proxy, Method method, Object[] args) throws Throwable {
+            	Object result = replaceHookedMethod(proxy,method,args);
+            	return result;
+        	}
+    	};
+
+    	IProxy proxy = (IProxy) Proxy.newProxyInstance(this.getClassLoader(),new Class[]{
+            IProxy.class
+    	},handler);
+	}
+
+	private Object replaceHookedMethod(Object proxy, Method method, Object[] args) throws InvocationTargetException, IllegalAccessException {
+    	Log.v(TAG,"hook之后的逻辑");
+    	return method.invoke(proxy,args);//调用原始代码
+	};
+}
+</code></pre></div></div>
+
+<p>上面代码大概意思就是应该走ProxyImpl的proxy方法，我们通过代理方式，执行了replaceHookMethod方法，这样就完成了方法替换的逻辑，我们只需要在replaceHookMethod中执行我们想要的逻辑就可以了。</p>
+
+<p>这个思想其实就是dexposed整体思想。但是实现起来可不会这么简单，因为Proxy类只能实现Interface的接口类，不可能我们写的所有方法都是接口实现的吧，所以dexposed所做的事情就是支持所有的方法的hook，
+下面看一下dexposed的sample中怎么写的吧。</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>public class DialogPatch implements IPatch {
+
+	@Override
+	public void handlePatch(final PatchParam arg0) throws Throwable {    	
+		Class&lt;?&gt; cls = null;
+		try {
+			cls= arg0.context.getClassLoader()
+					.loadClass("com.taobao.dexposed.MainActivity");
+		} catch (ClassNotFoundException e) {
+			e.printStackTrace();
+			return;
+		}     	
+ 		DexposedBridge.findAndHookMethod(cls, "showDialog",
+				new XC_MethodReplacement() {
+			@Override
+			protected Object replaceHookedMethod(MethodHookParam param) throws Throwable {
+				Activity mainActivity = (Activity) param.thisObject;
+				AlertDialog.Builder builder = new AlertDialog.Builder(mainActivity);
+				builder.setTitle("Dexposed sample")
+						.setMessage("The dialog is shown from patch apk!")
+						.setPositiveButton("ok", new DialogInterface.OnClickListener() {
+							public void onClick(DialogInterface dialog, int whichButton) {
+							}
+						}).create().show();
+				return null;                 
+			}
+		});
+	}
+}
+</code></pre></div></div>
+
+<p>我们看到它的使用方式和Proxy几乎是完全一样的，
+这就暴露了这个方案的一些问题：</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.所有的方法调用基本上都是采用反射的方式调用，一旦需要修复的方法中含有类成员变量的修改，将会极其复杂。
+2.他只能对方法级别进行hook，没有办法修改成员变量，也不能增加类和删除类
+3.如果我们的类被混淆，那么写补丁文件的时候，需要针对混淆之后的类来写补丁 综上原因，导致dexposed虽然实现了热更新，但使用起来还是很不方便的。
+</code></pre></div></div>
+
+<p>说了这么多，下面步入正题，就是dexposed如何做到hook所有的方法的呢：</p>
+
+<h3 id="dexposed-核心技术">dexposed 核心技术：</h3>
+<p>java每个方法在Dalvik中都会对应一个函数指针，所以我们只要改变函数指针的指向函数，就可以达到hook当前方法的目的</p>
+
+<p>以sample的例子进行讲解：
+我们只需要将MainActivity中方法showDialog的函数指针，指向XC_MethodReplacement的replaceHookedMethod方法，就可以实现dexposed的热更新。</p>
+
+<p>核心代码如下：</p>
+

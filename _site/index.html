@@ -5,7 +5,7 @@
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"><!--<![endif]-->
 <head>
 <meta charset="utf-8">
-<title>最近没有什么想法！ &#8211; 动而不语</title>
+<title>耐心 热情 梦想 坚持 &#8211; 动而不语</title>
 <meta name="description" content="Describe this nonsense.">
 <meta name="keywords" content="Jekyll, theme, themes, responsive, blog, modern">
 
@@ -14,7 +14,7 @@
 <!-- Open Graph -->
 <meta property="og:locale" content="en_US">
 <meta property="og:type" content="article">
-<meta property="og:title" content="最近没有什么想法！">
+<meta property="og:title" content="耐心 热情 梦想 坚持">
 <meta property="og:description" content="Describe this nonsense.">
 <meta property="og:url" content="http://localhost:4000/">
 <meta property="og:site_name" content="动而不语">
@@ -72,7 +72,8 @@
 				<li>
 					<img src="http://localhost:4000/images/avatar.jpg" alt="谢鹏冲 photo" class="author-photo">
 					<h4>谢鹏冲</h4>
-					<p>思考，未必有思想 行动，未必有结果</p>
+					<p>思考，未必有思想
+行动，未必有结果</p>
 				</li>
 				<li><a href="http://localhost:4000/about/"><span class="btn btn-inverse">了解更多</span></a></li>
 				<li>
@@ -108,13 +109,13 @@
   
   
     <div class="entry-image">
-      <img src="http://localhost:4000/images/abstract-1.jpg" alt="最近没有什么想法！">
+      <img src="http://localhost:4000/images/abstract-1.jpg" alt="耐心 热情 梦想 坚持">
     </div><!-- /.entry-image -->
   
   <div class="header-title">
     <div class="header-title-wrap">
       <h1>动而不语</h1>
-      <h2>最近没有什么想法！</h2>
+      <h2>耐心 热情 梦想 坚持</h2>
     </div><!-- /.header-title-wrap -->
   </div><!-- /.header-title -->
 </div><!-- /.entry-header -->
@@ -125,11 +126,11 @@
   <header>
     
       <div class="entry-image-index">
-        <a href="http://localhost:4000/%E7%83%AD%E6%9B%B4%E6%96%B0%E6%8A%80%E6%9C%AF%E4%BB%8B%E7%BB%8D/" title="热更新技术介绍"><img src="http://localhost:4000/images/abstract-3.jpg" alt="热更新技术介绍"></a>
+        <a href="http://localhost:4000/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF%E4%BB%8B%E7%BB%8D/" title="跨平台技术介绍"><img src="http://localhost:4000/images/abstract-3.jpg" alt="跨平台技术介绍"></a>
       </div><!-- /.entry-image -->
     
     <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2018-10-25T00:00:00+08:00"><a href="http://localhost:4000/%E7%83%AD%E6%9B%B4%E6%96%B0%E6%8A%80%E6%9C%AF%E4%BB%8B%E7%BB%8D/">October 25, 2018</a></time></span><span class="author vcard"><span class="fn"><a href="http://localhost:4000/about/" title="About 谢鹏冲">谢鹏冲</a></span></span>
+      <span class="entry-date date published updated"><time datetime="2018-11-01T00:00:00+08:00"><a href="http://localhost:4000/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF%E4%BB%8B%E7%BB%8D/">November 01, 2018</a></time></span><span class="author vcard"><span class="fn"><a href="http://localhost:4000/about/" title="About 谢鹏冲">谢鹏冲</a></span></span>
       
       <span class="entry-reading-time">
         <i class="fa fa-clock-o"></i>
@@ -139,71 +140,11 @@ Reading time ~1 minute
       
     </div><!-- /.entry-meta -->
     
-      <h1 class="entry-title"><a href="http://localhost:4000/%E7%83%AD%E6%9B%B4%E6%96%B0%E6%8A%80%E6%9C%AF%E4%BB%8B%E7%BB%8D/" rel="bookmark" title="热更新技术介绍" itemprop="url">热更新技术介绍</a></h1>
+      <h1 class="entry-title"><a href="http://localhost:4000/%E8%B7%A8%E5%B9%B3%E5%8F%B0%E6%8A%80%E6%9C%AF%E4%BB%8B%E7%BB%8D/" rel="bookmark" title="跨平台技术介绍" itemprop="url">跨平台技术介绍</a></h1>
     
   </header>
   <div class="entry-content">
-    <p>从2016年开始接触热更新，截止到目前为止，已经在不同公司开发过多个热更新框架，之前看过Ali有一本详细介绍热更新技术的文档，写的挺详细的，但是对于入门级的开发者来说，理解起来还是有难度的，所以在此总结一下目前业内热更新框架，由于热更新内容较多，所以分批更新。</p>
-
-<h2 id="业内主流热更新框架">业内主流热更新框架</h2>
-
-<p>热更新技术主要分为两派，一种是采用native hook方式，另一种通过classloader方式，两种方式我都尝试过，总结起来就是各有优缺点。
-<strong>native hook方式：</strong></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.不需要重启
-2.可以以方法为颗粒度进行更新
-3.性能损耗小
-4.稳定性差，兼容性差 典型代表：Andfix，dexposed，Sophix，QFix
-</code></pre></div></div>
-
-<p><strong>classloader方式：</strong></p>
-
-<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>1.需要进程重启才能生效
-2.一般是以class为颗粒度
-3.性能损耗大
-4.稳定性好，兼容性强 典型代表：Qzone hotfix，Sophix，Tinker，Amigo
-</code></pre></div></div>
-
-<p>除了主流技术以外，还有一些非主流技术：</p>
-
-<p>例如美团的Robust，我认为这个是一种原理最简单，坑最少的热更新方案，但同样有一些问题，就是需要在所有方法中都加入一段代码，我相信这个在很多公司应该是无法接受的。后面会详细介绍。</p>
-
-<p>以上的主流方案中，除了Qzone hotfix和Sophix以外，其他都是开源方案，
-Andfix属于半开源方案，因为热更新除了修复部分的技术，还有一部分是差分diff的逻辑，目前业界大部分文章强调的多是如何实现热更新，但打补丁包的过程也是一个技术难点。</p>
-
-
-  </div><!-- /.entry-content -->
-</article><!-- /.hentry -->
-
-<article class="hentry">
-  <header>
     
-    <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2013-10-26T00:00:00+08:00"><a href="http://localhost:4000/background-image/">October 26, 2013</a></time></span><span class="author vcard"><span class="fn"><a href="http://localhost:4000/about/" title="About 谢鹏冲">谢鹏冲</a></span></span>
-      
-      <span class="entry-reading-time">
-        <i class="fa fa-clock-o"></i>
-        
-Reading time ~1 minute
-      </span><!-- /.entry-reading-time -->
-      
-    </div><!-- /.entry-meta -->
-    
-      <h1 class="entry-title"><a href="http://localhost:4000/background-image/" rel="bookmark" title="Post with a Background Image" itemprop="url">Post with a Background Image</a></h1>
-    
-  </header>
-  <div class="entry-content">
-    <p>Here be a sample post with a custom background image. To utilize this “feature” just add the following YAML to a post’s front matter.</p>
-
-<div class="language-yaml highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="na">image</span><span class="pi">:</span>
-  <span class="na">background</span><span class="pi">:</span> <span class="s">filename.png</span>
-</code></pre></div></div>
-
-<p>This little bit of YAML makes the assumption that your background image asset is in the <code class="highlighter-rouge">/images</code> folder. If you place it somewhere else or are hotlinking from the web, just include the full http(s):// URL. Either way you should have a background image that is tiled.</p>
-
-<p>If you want to set a background image for the entire site just add <code class="highlighter-rouge">background: filename.png</code> to your <code class="highlighter-rouge">_config.yml</code> and BOOM — background images on every page!</p>
-
-<div xmlns:cc="http://creativecommons.org/ns#" xmlns:dct="http://purl.org/dc/terms/" about="http://subtlepatterns.com" class="notice">Background images from <span property="dct:title">Subtle Patterns</span> (<a rel="cc:attributionURL" property="cc:attributionName" href="http://subtlepatterns.com">Subtle Patterns</a>) / <a rel="license" href="http://creativecommons.org/licenses/by-sa/3.0/">CC BY-SA 3.0</a></div>
 
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
@@ -212,11 +153,11 @@ Reading time ~1 minute
   <header>
     
       <div class="entry-image-index">
-        <a href="http://localhost:4000/code-highlighting-post/" title="Syntax Highlighting Post"><img src="http://localhost:4000/images/abstract-10.jpg" alt="Syntax Highlighting Post"></a>
+        <a href="http://localhost:4000/%E6%94%BB%E9%98%B2%E6%8A%80%E6%9C%AF%E4%BB%8B%E7%BB%8D/" title="攻防技术介绍"><img src="http://localhost:4000/images/abstract-3.jpg" alt="攻防技术介绍"></a>
       </div><!-- /.entry-image -->
     
     <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2013-08-16T00:00:00+08:00"><a href="http://localhost:4000/code-highlighting-post/">August 16, 2013</a></time></span><span class="author vcard"><span class="fn"><a href="http://localhost:4000/about/" title="About 谢鹏冲">谢鹏冲</a></span></span>
+      <span class="entry-date date published updated"><time datetime="2018-11-01T00:00:00+08:00"><a href="http://localhost:4000/%E6%94%BB%E9%98%B2%E6%8A%80%E6%9C%AF%E4%BB%8B%E7%BB%8D/">November 01, 2018</a></time></span><span class="author vcard"><span class="fn"><a href="http://localhost:4000/about/" title="About 谢鹏冲">谢鹏冲</a></span></span>
       
       <span class="entry-reading-time">
         <i class="fa fa-clock-o"></i>
@@ -226,108 +167,11 @@ Reading time ~1 minute
       
     </div><!-- /.entry-meta -->
     
-      <h1 class="entry-title"><a href="http://localhost:4000/code-highlighting-post/" rel="bookmark" title="Syntax Highlighting Post" itemprop="url">Syntax Highlighting Post</a></h1>
+      <h1 class="entry-title"><a href="http://localhost:4000/%E6%94%BB%E9%98%B2%E6%8A%80%E6%9C%AF%E4%BB%8B%E7%BB%8D/" rel="bookmark" title="攻防技术介绍" itemprop="url">攻防技术介绍</a></h1>
     
   </header>
   <div class="entry-content">
-    <p>Syntax highlighting is a feature that displays source code, in different colors and fonts according to the category of terms. This feature facilitates writing in a structured language such as a programming language or a markup language as both structures and syntax errors are visually distinct. Highlighting does not affect the meaning of the text itself; it is intended only for human readers.<sup id="fnref:1"><a href="#fn:1" class="footnote">1</a></sup></p>
-
-<h3 id="gfm-code-blocks">GFM Code Blocks</h3>
-
-<p>GitHub Flavored Markdown <a href="https://help.github.com/articles/creating-and-highlighting-code-blocks/">fenced code blocks</a> are supported. To modify styling and highlight colors edit <code class="highlighter-rouge">/_sass/syntax.scss</code>.</p>
-
-<div class="language-css highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nf">#container</span> <span class="p">{</span>
-  <span class="nl">float</span><span class="p">:</span> <span class="nb">left</span><span class="p">;</span>
-  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span> <span class="m">-240px</span> <span class="m">0</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div></div>
-
-<figure class="highlight"><pre><code class="language-scss" data-lang="scss"><span class="nc">.highlight</span> <span class="p">{</span>
-  <span class="nl">margin</span><span class="p">:</span> <span class="m">0</span><span class="p">;</span>
-  <span class="nl">padding</span><span class="p">:</span> <span class="m">1em</span><span class="p">;</span>
-  <span class="nl">font-family</span><span class="p">:</span> <span class="nv">$monospace</span><span class="p">;</span>
-  <span class="nl">font-size</span><span class="p">:</span> <span class="nv">$type-size-7</span><span class="p">;</span>
-  <span class="nl">line-height</span><span class="p">:</span> <span class="m">1</span><span class="mi">.8</span><span class="p">;</span>
-<span class="p">}</span></code></pre></figure>
-
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"pagination"</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
-  {% if page.previous %}
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.url }}{{ page.previous.url }}"</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">title=</span><span class="s">"{{ page.previous.title }}"</span><span class="nt">&gt;</span>Previous article<span class="nt">&lt;/a&gt;</span>
-  {% endif %}
-  {% if page.next %}
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.url }}{{ page.next.url }}"</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">title=</span><span class="s">"{{ page.next.title }}"</span><span class="nt">&gt;</span>Next article<span class="nt">&lt;/a&gt;</span>
-  {% endif %}
-<span class="nt">&lt;/nav&gt;</span><span class="c">&lt;!-- /.pagination --&gt;</span>
-</code></pre></div></div>
-
-<figure class="highlight"><pre><code class="language-html" data-lang="html"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
-2
-3
-4
-5
-6
-7
-8
-</pre></td><td class="code"><pre><span class="nt">&lt;nav</span> <span class="na">class=</span><span class="s">"pagination"</span> <span class="na">role=</span><span class="s">"navigation"</span><span class="nt">&gt;</span>
-  {% if page.previous %}
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.url }}{{ page.previous.url }}"</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">title=</span><span class="s">"{{ page.previous.title }}"</span><span class="nt">&gt;</span>Previous article<span class="nt">&lt;/a&gt;</span>
-  {% endif %}
-  {% if page.next %}
-    <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"{{ site.url }}{{ page.next.url }}"</span> <span class="na">class=</span><span class="s">"btn"</span> <span class="na">title=</span><span class="s">"{{ page.next.title }}"</span><span class="nt">&gt;</span>Next article<span class="nt">&lt;/a&gt;</span>
-  {% endif %}
-<span class="nt">&lt;/nav&gt;</span><span class="c">&lt;!-- /.pagination --&gt;</span></pre></td></tr></tbody></table></code></pre></figure>
-
-<div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">module</span> <span class="nn">Jekyll</span>
-  <span class="k">class</span> <span class="nc">TagIndex</span> <span class="o">&lt;</span> <span class="no">Page</span>
-    <span class="k">def</span> <span class="nf">initialize</span><span class="p">(</span><span class="n">site</span><span class="p">,</span> <span class="n">base</span><span class="p">,</span> <span class="n">dir</span><span class="p">,</span> <span class="n">tag</span><span class="p">)</span>
-      <span class="vi">@site</span> <span class="o">=</span> <span class="n">site</span>
-      <span class="vi">@base</span> <span class="o">=</span> <span class="n">base</span>
-      <span class="vi">@dir</span> <span class="o">=</span> <span class="n">dir</span>
-      <span class="vi">@name</span> <span class="o">=</span> <span class="s1">'index.html'</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">process</span><span class="p">(</span><span class="vi">@name</span><span class="p">)</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">read_yaml</span><span class="p">(</span><span class="no">File</span><span class="p">.</span><span class="nf">join</span><span class="p">(</span><span class="n">base</span><span class="p">,</span> <span class="s1">'_layouts'</span><span class="p">),</span> <span class="s1">'tag_index.html'</span><span class="p">)</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'tag'</span><span class="p">]</span> <span class="o">=</span> <span class="n">tag</span>
-      <span class="n">tag_title_prefix</span> <span class="o">=</span> <span class="n">site</span><span class="p">.</span><span class="nf">config</span><span class="p">[</span><span class="s1">'tag_title_prefix'</span><span class="p">]</span> <span class="o">||</span> <span class="s1">'Tagged: '</span>
-      <span class="n">tag_title_suffix</span> <span class="o">=</span> <span class="n">site</span><span class="p">.</span><span class="nf">config</span><span class="p">[</span><span class="s1">'tag_title_suffix'</span><span class="p">]</span> <span class="o">||</span> <span class="s1">'&amp;#8211;'</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'title'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"</span><span class="si">#{</span><span class="n">tag_title_prefix</span><span class="si">}#{</span><span class="n">tag</span><span class="si">}</span><span class="s2">"</span>
-      <span class="nb">self</span><span class="p">.</span><span class="nf">data</span><span class="p">[</span><span class="s1">'description'</span><span class="p">]</span> <span class="o">=</span> <span class="s2">"An archive of posts tagged </span><span class="si">#{</span><span class="n">tag</span><span class="si">}</span><span class="s2">."</span>
-    <span class="k">end</span>
-  <span class="k">end</span>
-<span class="k">end</span>
-</code></pre></div></div>
-
-<h3 id="code-blocks-in-lists">Code Blocks in Lists</h3>
-
-<p>Indentation matters. Be sure the indent of the code block aligns with the first non-space character after the list item marker (e.g., <code class="highlighter-rouge">1.</code>). Usually this will mean indenting 3 spaces instead of 4.</p>
-
-<ol>
-  <li>Do step 1.</li>
-  <li>
-    <p>Now do this:</p>
-
-    <div class="language-ruby highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="k">def</span> <span class="nf">print_hi</span><span class="p">(</span><span class="nb">name</span><span class="p">)</span>
-  <span class="nb">puts</span> <span class="s2">"Hi, </span><span class="si">#{</span><span class="nb">name</span><span class="si">}</span><span class="s2">"</span>
-<span class="k">end</span>
-<span class="n">print_hi</span><span class="p">(</span><span class="s1">'Tom'</span><span class="p">)</span>
-<span class="c1">#=&gt; prints 'Hi, Tom' to STDOUT.</span>
-</code></pre></div>    </div>
-  </li>
-  <li>Now you can do this.</li>
-</ol>
-
-<h3 id="github-gist-embed">GitHub Gist Embed</h3>
-
-<p>An example of a Gist embed below.</p>
-
-<p>true<script src="https://gist.github.com/mmistakes/6589546.js"> </script></p>
-<div class="footnotes">
-  <ol>
-    <li id="fn:1">
-      <p><a href="http://en.wikipedia.org/wiki/Syntax_highlighting">http://en.wikipedia.org/wiki/Syntax_highlighting</a> <a href="#fnref:1" class="reversefootnote">&#8617;</a></p>
-    </li>
-  </ol>
-</div>
+    
 
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
@@ -335,8 +179,12 @@ Reading time ~1 minute
 <article class="hentry">
   <header>
     
+      <div class="entry-image-index">
+        <a href="http://localhost:4000/%E6%8F%92%E4%BB%B6%E5%8C%96%E4%BB%8B%E7%BB%8D/" title="插件化技术总结"><img src="http://localhost:4000/images/abstract-3.jpg" alt="插件化技术总结"></a>
+      </div><!-- /.entry-image -->
+    
     <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2013-08-12T00:00:00+08:00"><a href="http://localhost:4000/sample-link-post/">August 12, 2013</a></time></span><span class="author vcard"><span class="fn"><a href="http://localhost:4000/about/" title="About 谢鹏冲">谢鹏冲</a></span></span>
+      <span class="entry-date date published updated"><time datetime="2018-11-01T00:00:00+08:00"><a href="http://localhost:4000/%E6%8F%92%E4%BB%B6%E5%8C%96%E4%BB%8B%E7%BB%8D/">November 01, 2018</a></time></span><span class="author vcard"><span class="fn"><a href="http://localhost:4000/about/" title="About 谢鹏冲">谢鹏冲</a></span></span>
       
       <span class="entry-reading-time">
         <i class="fa fa-clock-o"></i>
@@ -346,11 +194,11 @@ Reading time ~1 minute
       
     </div><!-- /.entry-meta -->
     
-      <h1 class="entry-title"><a href="http://localhost:4000/sample-link-post/" class="permalink" rel="bookmark" title="Sample Link Post"><i class="fa fa-bookmark"></i></a> <a href="http://mademistakes.com">Sample Link Post</a></h1>
+      <h1 class="entry-title"><a href="http://localhost:4000/%E6%8F%92%E4%BB%B6%E5%8C%96%E4%BB%8B%E7%BB%8D/" rel="bookmark" title="插件化技术总结" itemprop="url">插件化技术总结</a></h1>
     
   </header>
   <div class="entry-content">
-    <p>This theme supports <strong>link posts</strong>, made famous by John Gruber. To use, just add <code class="highlighter-rouge">link: http://url-you-want-linked</code> to the post’s YAML front matter and you’re done.</p>
+    
 
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
@@ -358,8 +206,12 @@ Reading time ~1 minute
 <article class="hentry">
   <header>
     
+      <div class="entry-image-index">
+        <a href="http://localhost:4000/%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%E6%8E%A2%E7%B4%A2/" title="应用架构探索"><img src="http://localhost:4000/images/abstract-3.jpg" alt="应用架构探索"></a>
+      </div><!-- /.entry-image -->
+    
     <div class="entry-meta">
-      <span class="entry-date date published updated"><time datetime="2013-06-25T00:00:00+08:00"><a href="http://localhost:4000/video-post/">June 25, 2013</a></time></span><span class="author vcard"><span class="fn"><a href="http://localhost:4000/about/" title="About 谢鹏冲">谢鹏冲</a></span></span>
+      <span class="entry-date date published updated"><time datetime="2018-11-01T00:00:00+08:00"><a href="http://localhost:4000/%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%E6%8E%A2%E7%B4%A2/">November 01, 2018</a></time></span><span class="author vcard"><span class="fn"><a href="http://localhost:4000/about/" title="About 谢鹏冲">谢鹏冲</a></span></span>
       
       <span class="entry-reading-time">
         <i class="fa fa-clock-o"></i>
@@ -369,16 +221,38 @@ Reading time ~1 minute
       
     </div><!-- /.entry-meta -->
     
-      <h1 class="entry-title"><a href="http://localhost:4000/video-post/" rel="bookmark" title="A Post with a Video" itemprop="url">A Post with a Video</a></h1>
+      <h1 class="entry-title"><a href="http://localhost:4000/%E5%BA%94%E7%94%A8%E6%9E%B6%E6%9E%84%E6%8E%A2%E7%B4%A2/" rel="bookmark" title="应用架构探索" itemprop="url">应用架构探索</a></h1>
     
   </header>
   <div class="entry-content">
-    <iframe width="560" height="315" src="//www.youtube.com/embed/SU3kYxJmWuQ" frameborder="0"></iframe>
+    
 
-<p>Video embeds are responsive and scale with the width of the main content block with the help of <a href="http://fitvidsjs.com/">FitVids</a>.</p>
+  </div><!-- /.entry-content -->
+</article><!-- /.hentry -->
 
-<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;iframe</span> <span class="na">width=</span><span class="s">"560"</span> <span class="na">height=</span><span class="s">"315"</span> <span class="na">src=</span><span class="s">"//www.youtube.com/embed/SU3kYxJmWuQ"</span> <span class="na">frameborder=</span><span class="s">"0"</span><span class="nt">&gt;&lt;/iframe&gt;</span>
-</code></pre></div></div>
+<article class="hentry">
+  <header>
+    
+      <div class="entry-image-index">
+        <a href="http://localhost:4000/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86%E7%9A%84%E5%BF%83%E7%9A%84%E4%BD%93%E4%BC%9A/" title="团队管理心得体会"><img src="http://localhost:4000/images/abstract-3.jpg" alt="团队管理心得体会"></a>
+      </div><!-- /.entry-image -->
+    
+    <div class="entry-meta">
+      <span class="entry-date date published updated"><time datetime="2018-11-01T00:00:00+08:00"><a href="http://localhost:4000/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86%E7%9A%84%E5%BF%83%E7%9A%84%E4%BD%93%E4%BC%9A/">November 01, 2018</a></time></span><span class="author vcard"><span class="fn"><a href="http://localhost:4000/about/" title="About 谢鹏冲">谢鹏冲</a></span></span>
+      
+      <span class="entry-reading-time">
+        <i class="fa fa-clock-o"></i>
+        
+Reading time ~1 minute
+      </span><!-- /.entry-reading-time -->
+      
+    </div><!-- /.entry-meta -->
+    
+      <h1 class="entry-title"><a href="http://localhost:4000/%E5%9B%A2%E9%98%9F%E7%AE%A1%E7%90%86%E7%9A%84%E5%BF%83%E7%9A%84%E4%BD%93%E4%BC%9A/" rel="bookmark" title="团队管理心得体会" itemprop="url">团队管理心得体会</a></h1>
+    
+  </header>
+  <div class="entry-content">
+    
 
   </div><!-- /.entry-content -->
 </article><!-- /.hentry -->
@@ -417,6 +291,7 @@ Reading time ~1 minute
     
   </ul>
 </div>
+
 
 </div><!-- /#main -->
 
